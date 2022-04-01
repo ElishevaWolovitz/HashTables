@@ -6,16 +6,27 @@
 #include "HashTbls.h"
 using namespace std;
 
+
+    //default constructor
+    template<class T, class K>
+    HashTbls<T,K> :: HashTbls(){
+        tableSize = 0;
+        capacity = 0;
+        item = new K;
+        item->flag = empty;
+    }
+
     //constructor that accepts as a parameter the size of the table and initializes a table whose
     //size is the smallest prime number larger than the given size
     template<class T, class K>
     HashTbls<T,K> :: HashTbls(int n) {
-        int size = n + 1;
-        while(!isPrime(size)){
-            size++;
+        capacity = 0; //not suer yet what it does
+        tableSize = n + 1;
+        while(!isPrime(tableSize)){
+            tableSize++;
         }
-        tableSize = size;
-        Table.resize(tableSize);
+        //dynamically allocating item to an array of tabel size
+        item = new Item<T,K> [tableSize];  //might need to add is empty
     }
 
     //checks if a number is prime
@@ -34,13 +45,13 @@ using namespace std;
     //destructor
     template<class T, class K>
     HashTbls<T,K> :: ~HashTbls() {
-        ~Table;
+        if (tableSize) delete [] item;
     }
 
     template<class T, class K>
     double HashTbls<T,K> :: hash(K key,int i){
         //linear Hash function
-        return (h1(item.key)+1)%tableSize;
+        return (h1(item->key)+i)%tableSize; //might need a pointer
     }
 
     template<class T, class K>
@@ -48,14 +59,13 @@ using namespace std;
         //initialize variables
         int i = 0;
         int hashValue;
-        item(data, key, empty);
 
         while( i != tableSize ) {
             //calculate the hash value
-            hashValue = hash(item.key, i);
+            hashValue = hash(key, i);
 
-            if(item.data[hashValue] == NULL || item.flag == deleted){
-                item.flag = full;
+            if(item[hashValue] == NULL || item->flag == deleted){
+                item->flag = full;
                 return hashValue;
             }
             else {
@@ -79,11 +89,11 @@ using namespace std;
             hashValue = hash(key, i);
 
             //if null it means the value is not in the tabel as not hashed too
-            if(item.data[hashValue] == NULL && item.flag != deleted){ //check if these was a not deleted and therefore must keep on looking
+            if(item[hashValue] == NULL && item->flag != deleted){ //check if these was a not deleted and therefore must keep on looking
                 return NULL;
             }
-            else if(item.data[hashValue] == key){
-                item.flag = full;
+            else if(item[hashValue] == key){
+                item->flag = full;
                 return hashValue;
             }
             else {
@@ -104,12 +114,12 @@ using namespace std;
             hashValue = hash(key, i);
 
             //if null it means the value is not in the tabel as not hashed too
-            if(item.data[hashValue] == NULL && item.flag != deleted){ //check if these was a not deleted and therefore must keep on looking
+            if(item[hashValue] == NULL && item->flag != deleted){ //check if these was a not deleted and therefore must keep on looking
                 exit;
             }
-            else if(item.data[hashValue] == key){
-                item.flag = deleted;
-                item.data[hashValue] = NULL;
+            else if(item[hashValue] == key){
+                item->flag = deleted;
+                item[hashValue] = NULL;
             }
             else {
                 i++;
@@ -120,8 +130,8 @@ using namespace std;
     //function print to display the contents of the entire table
     template<class T, class K>
     void HashTbls<T,K> :: print(){
-        for (typename std::list<T>::iterator it=Table.begin(); it != Table.end(); ++it){
-            cout << *it << ", "<< endl;
+        for(int i = 0; i < tableSize; i++){
+            cout<< item[i] << " " ;
         }
     }
 

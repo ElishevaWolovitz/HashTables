@@ -25,8 +25,11 @@ class HashTbls {
 
 public:
      Item<T,K>* item;
-     std::list<T> Table;
+     int capacity;
      int tableSize;
+
+     // constructor
+     HashTbls();
 
     //constructor that accepts as a parameter the size of the table and initializes a table whose
     //size is the smallest prime number larger than the given size
@@ -39,10 +42,10 @@ public:
     ~HashTbls();
 
     //hash function h1 that receives a key k of type K and returns its position in the table
-    //virtual int h1(K key) = 0;
+    virtual int h1(K key) = 0;
 
     // probe function h2 which returns the step size
-    //virtual int h2(K key) = 0;
+    virtual int h2(K key) = 0;
 
     //hash function
     double hash(K key,int i);

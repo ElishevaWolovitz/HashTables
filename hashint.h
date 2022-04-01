@@ -7,29 +7,24 @@
 #include "HashTbls.h"
 
 
-class hashint  /*HashTbls<int,int>*/{
+class hashint : HashTbls<int,int>{
 
-    //HashTbls<int,int> table1 = new HashTble(int n);
-    //HashTbls<int,int> table1(int n)
+    HashTbls<int,int> table1;
 
+public:
+    hashint(int n){
+        HashTbls<int,int> (n);
+    }
 
-
-
-    /*int h1(int key){
-            int counter = 0;
-
-            for (std::list<int>::iterator it= table1.Table.begin(); *it == key; ++it){
-                if(it == table1.Table.end()){
-                    cout << " Key is not in table " << endl;
-                    return NULL;
-                }
-                counter++;
+private:
+    int h1(int key){
+            for(int i =0; i < table1->tableSize, i++){
+                if(table1[1] == key ) return i;
             }
+            return -1;
+    }
 
-            return counter;
-        }
-
-        int h2(int key){ return floor(key*table1.tableSize);}*/
+    int h2(int key){ return floor(key*table1.tableSize);}
 };
 
 
