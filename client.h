@@ -4,8 +4,8 @@
 
 #ifndef Q2_CLIENT_H
 #define Q2_CLIENT_H
-#include <string>;
-#include <iostream>;
+#include <string>
+#include <iostream>
 #include <list>
 #include "volunteer.h"
 using namespace std;

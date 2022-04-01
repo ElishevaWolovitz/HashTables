@@ -4,7 +4,7 @@
 #include <iostream>
 #ifndef Q2_HASHTBLS_H
 #define Q2_HASHTBLS_H
-#include <list>
+
 using namespace std;
 
 enum state {empty, full, deleted};

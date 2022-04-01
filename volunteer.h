@@ -4,8 +4,8 @@
 
 #ifndef Q2_VOLUNTEER_H
 #define Q2_VOLUNTEER_H
-#include <string>;
-#include <iostream>;
+#include <string>
+#include <iostream>
 using namespace std;
 
 
@@ -60,8 +60,7 @@ public:
     friend ostream& operator <<(ostream& os, volunteer vol){
         os<<vol.phoneNumber<<", "<<vol.address<<", "<<vol.phoneNumber<<endl;
         return os;
-    }
-
+    };
 
 };
 

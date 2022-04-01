@@ -11,15 +11,15 @@ using namespace std;
 
 int main()
 {
-    HashTbls<int,int> table(3);
+    hashint table(3);
     table.print();
-    table.HashInsert(hashint,6);
-    table.HashInsert(hashint,2);
-    table.HashInsert(hashint,0);
+    table.HashInsert(1,6);
+    table.HashInsert(1,2);
+    table.HashInsert(1,0);
     table.print();
-    table.HashSearch(hashint, 6);
-    table.HashSearch(hashint, 0);
-    table.HashDelete(hashint, 6);
+    table.HashSearch(1, 6);
+    table.HashSearch(1, 0);
+    table.HashDelete(1, 6);
     table.print();
 
 
