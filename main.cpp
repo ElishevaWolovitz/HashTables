@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    HashTbls<hashint,int> table(3);
+    HashTbls<int,int> table(3);
     table.print();
     table.HashInsert(hashint,6);
     table.HashInsert(hashint,2);

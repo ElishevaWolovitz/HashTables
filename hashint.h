@@ -9,7 +9,7 @@
 
 class hashint : HashTbls<int,int>{
 
-    HashTbls<int,int> table1;
+    //HashTbls<int,int> table1;
 
 public:
     hashint(int n){
@@ -18,13 +18,13 @@ public:
 
 private:
     int h1(int key){
-            for(int i =0; i < table1->tableSize, i++){
-                if(table1[1] == key ) return i;
+            for(int i =0; i < tableSize, i++){
+                if(item[i] == key ) return i;
             }
             return -1;
     }
 
-    int h2(int key){ return floor(key*table1.tableSize);}
+    int h2(int key){ return floor(key.tableSize);}
 };
 
 
