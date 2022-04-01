@@ -7,24 +7,19 @@
 #include "HashTbls.h"
 
 
-class hashint : HashTbls<int,int>{
-
-    //HashTbls<int,int> table1;
+class hashint : public HashTbls<int,int>{
 
 public:
-    hashint(int n){
-        HashTbls<int,int> (n);
-    }
+    hashint(int size): HashTbls(size){};
 
-private:
     int h1(int key){
-            for(int i =0; i < tableSize, i++){
-                if(item[i] == key ) return i;
+            for(int i =0; i < tableSize; i++){
+                if(item[i].key == key ) return i;
             }
             return -1;
     }
 
-    int h2(int key){ return floor(key.tableSize);}
+    int h2(int key){ return floor(key*tableSize);}
 };
 
 
