@@ -14,6 +14,11 @@ using namespace std;
 class HashVolunteer : public HashTbls<volunteer, string>
 {
 public:
+
+    HashVolunteer():HashTbls<volunteer, string>(){};
+
+    HashVolunteer(int size): HashTbls<volunteer, string>(size){};
+
     int h1(string key)
     {
         for (int i = 0; i < tableSize;)

@@ -14,6 +14,11 @@ using namespace std;
 class HashClient : public HashTbls<client, int>
 {
 public:
+
+    HashClient(): HashTbls<client, int>(){};
+
+    HashClient(int size): HashTbls<client, int>(size){};
+
     int h1(int key)
     {
         for (int i = 0; i < capacity;)

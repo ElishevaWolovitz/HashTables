@@ -3,6 +3,7 @@
 #include "HashTbls.h"
 #include "hashint.h"
 #include "client.h"
+#include "Repository.h"
 using namespace std;
 
 int main()

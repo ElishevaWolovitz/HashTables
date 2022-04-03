@@ -11,12 +11,14 @@
 using namespace std;
 
 class client {
-    std::string name;
-    std::string address;
-    int phoneNumber;
-    static std::list<volunteer> responded;
 
-    client(std::string name, std::string address, int phoneNumber){
+public:
+    string name;
+    string address;
+    int phoneNumber;
+    static list<volunteer> responded;
+
+    client(string name, string address, int phoneNumber){
         this->name = name;
         this->address = address;
         this->phoneNumber = phoneNumber;

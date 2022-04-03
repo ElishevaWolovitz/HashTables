@@ -10,8 +10,10 @@ using namespace std;
 
 
 class volunteer {
-    std::string name;
-    std::string address;
+
+public:
+    string name;
+    string address;
     int phoneNumber;
 
 public:
@@ -22,7 +24,7 @@ public:
         phoneNumber = 0;
     }
 
-    volunteer(std::string name, std::string address, int phoneNumber){
+    volunteer(string name, string address, int phoneNumber){
         this->name = name;
         this->address = address;
         this->phoneNumber = phoneNumber;
