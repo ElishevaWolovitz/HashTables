@@ -2,8 +2,9 @@
 // Created by Gabi Bondi on 30/03/2022.
 //
 
-#ifndef Q2_HASHINT_H
-#define Q2_HASHINT_H
+#pragma once
+#include <iostream>
+#pragma warning (disable:4996)
 #include "HashTbls.h"
 
 
@@ -13,10 +14,10 @@ public:
     hashint(int size): HashTbls(size){};
 
     int h1(int key){
-            for(int i =0; i < tableSize; i++){
-                if(item[i].key == key ) return i;
-            }
-            return -1;
+        for(int i =0; i < tableSize; i++){
+            if(item[i].key == key ) return i;
+        }
+        return -1;
     }
 
     int h2(int key){ return floor(key*tableSize);}
@@ -24,6 +25,3 @@ public:
 
 
 
-
-
-#endif //Q2_HASHINT_H
