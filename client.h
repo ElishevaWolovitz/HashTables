@@ -18,6 +18,7 @@ public:
     int phoneNumber;
     static list<volunteer> responded;
 
+
     client(string name, string address, int phoneNumber){
         this->name = name;
         this->address = address;

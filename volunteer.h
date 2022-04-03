@@ -6,6 +6,9 @@
 #define Q2_VOLUNTEER_H
 #include <string>
 #include <iostream>
+#include "client.h"
+#include <list>
+#include <string>
 using namespace std;
 
 
@@ -15,6 +18,8 @@ public:
     string name;
     string address;
     int phoneNumber;
+    // a list of client names that the volunteer responded to
+    static list<string> respondedTo;
 
 public:
 

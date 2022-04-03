@@ -38,11 +38,35 @@ class Repository {
         hashClient.HashInsert(cli,cli.phoneNumber);
     }
 
-    void addVolunteerToClient(volunteer vol, client cli){}
+    void addVolunteerToClient(volunteer vol, client cli){
+        cli.Responded(vol);
+        // add the name of the client to the list of the volunteer that respondedTo it
+        vol.respondedTo.push_back(cli.name);
+    }
 
-    void listOfVolunteers(client cli){}
+    void listOfVolunteers(client cli){
+        for( list<volunteer>::iterator iter= cli.responded.begin(); iter != cli.responded.end(); iter++ )
+            cout<<iter->name<< ", ";
+    }
 
-    void listOfClients(volunteer vol){}
+    void listOfClients(volunteer vol) {
+        // iterate through teh list of client names
+        for (list<string>::iterator iter = vol.respondedTo.begin(); iter != vol.respondedTo.end(); iter++)
+            cout << *iter << ", ";
+    }
+
+    void printVolunteersAndClient(){
+        for( int i = 0; i < hashVolunteer.tableSize; i++){
+            if(hashVolunteer.item[i].flag == full){
+                cout << hashVolunteer.item[i].data;
+            }
+        }
+        for( int i = 0; i < hashClient.tableSize; i++){
+            if(hashClient.item[i].flag == full){
+                cout << hashClient.item[i].data;
+            }
+        }
+    };
 
 
 };
