@@ -1,6 +1,7 @@
 //
 // Created by Gabi Bondi on 29/03/2022.
 //
+//Done by Elisheva Wolovitz and Gabriella Bondi
 
 #ifndef Q2_CLIENT_H
 #define Q2_CLIENT_H
@@ -18,13 +19,23 @@ public:
     int phoneNumber;
     static list<volunteer> responded;
 
+    //default constructor
+    client(){
+        name = NULL;
+        address = NULL;
+        phoneNumber = 0;
+        responded.is_empty<volunteer>;
+    }
 
+
+    // constructor that assigns string, address and phoneNumber
     client(string name, string address, int phoneNumber){
         this->name = name;
         this->address = address;
         this->phoneNumber = phoneNumber;
     }
 
+    //adds a volunteer to the list of responded
     void Responded(volunteer vol) {
         responded.push_back(vol);
 
@@ -33,11 +44,13 @@ public:
 
     }
 
+    //client destructor
     ~client(){
         delete[] this;
     }
 
-    bool operator==(const client& client1) const{
+    //equals operator
+    operator==(const client& client1) const{
         return (name == client1.name);
     }
 

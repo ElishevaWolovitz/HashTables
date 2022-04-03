@@ -1,6 +1,8 @@
 //
 // Created by Gabi Bondi on 29/03/2022.
 //
+//Done by Elisheva Wolovitz and Gabriella Bondi
+
 
 #ifndef Q2_VOLUNTEER_H
 #define Q2_VOLUNTEER_H
@@ -23,22 +25,26 @@ public:
 
 public:
 
+    //default constructor
     volunteer(){
         name = "";
         address = "";
         phoneNumber = 0;
     }
 
+    //constructor that sets the name, address and phone number of the volunteer
     volunteer(string name, string address, int phoneNumber){
         this->name = name;
         this->address = address;
         this->phoneNumber = phoneNumber;
     }
 
+    //volunteer destructor
     ~volunteer(){
         delete[] this;
     }
 
+    //equals operator
     bool operator==(const volunteer& vol) const{
         return (name == vol.name);
     }

@@ -1,6 +1,8 @@
 //
 // Created by Gabi Bondi on 29/03/2022.
 //
+//Done by Elisheva Wolovitz and Gabriella Bondi
+
 #pragma once
 #include <iostream>
 #include <cmath>
@@ -28,12 +30,12 @@ public:
     int capacity;
     int tableSize;
 
-    // constructor
+    // default constructor
     HashTbls()
     {
         tableSize = 0;
         capacity = 0;
-        item = new Item<T,K>[tableSize];
+        item = new K; //Item<T,K>[tableSize];
     }
 
     //constructor that accepts as a parameter the size of the table and initializes a table whose

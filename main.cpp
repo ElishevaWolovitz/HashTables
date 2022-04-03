@@ -1,3 +1,6 @@
+//Done by Elisheva Wolovitz and Gabriella Bondi
+
+
 #include <iostream>
 #include <string>
 #include "HashTbls.h"
@@ -6,9 +9,10 @@
 #include "Repository.h"
 using namespace std;
 
+
 int main()
 {
-    hashint table(3);
+    /*hashint table(3);
     table.print();
     table.HashInsert(1,6);
     table.HashInsert(1,2);
@@ -17,11 +21,11 @@ int main()
     table.HashSearch(1, 6);
     table.HashSearch(1, 0);
     table.HashDelete(1, 6);
-    table.print();
+    table.print();*/
 
 
 
-    /*char ch;
+    char ch;
     volunteer v;
     client c;
     list<volunteer*> lst;
@@ -43,13 +47,13 @@ int main()
             case 'n':cin >> v; ht.addVolunteer(v);  break;
             case 'd':cin >> v.name; ht.delVolunteer(v);  break;
             case 'c': cin >> c; ht.addClient(c); break;
-            case 'l': cout << "enter volunteer name and client phone ";  cin >> v.name >> c.phone; ht.addVolunteerToClient(v,c); break;
-            case '*': cout << "enter client phone ";  cin >> c.phone; ht.listOfVolunteers(c); break;
+            case 'l': cout << "enter volunteer name and client phone ";  cin >> v.name >> c.phoneNumber; ht.addVolunteerToClient(v,c); break;
+            case '*': cout << "enter client phone ";  cin >> c.phoneNumber; ht.listOfVolunteers(c); break;
             case 'i': cout << "enter volunteer name ";  cin >> v.name; ht.listOfClients(v); break;
             case 'e':cout << "bye "; break;
             default: cout << "Error ";  break;
         }
-    } while (ch != 'e');*/
+    } while (ch != 'e');
 
     return 0;
 }
