@@ -21,10 +21,10 @@ public:
 
     //default constructor
     client(){
-        name = NULL;
-        address = NULL;
+        name = "";
+        address = "";
         phoneNumber = 0;
-        responded.is_empty<volunteer>;
+        responded.empty();
     }
 
 
@@ -50,8 +50,8 @@ public:
     }
 
     //equals operator
-    operator==(const client& client1) const{
-        return (name == client1.name);
+    void operator==(const client& client1) const{
+        name == client1.name;
     }
 
     //assignment operator

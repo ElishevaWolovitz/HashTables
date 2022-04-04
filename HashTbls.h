@@ -35,7 +35,7 @@ public:
     {
         tableSize = 0;
         capacity = 0;
-        item = new K; //Item<T,K>[tableSize];
+        item = new Item<T,K>[tableSize];
     }
 
     //constructor that accepts as a parameter the size of the table and initializes a table whose
@@ -82,7 +82,7 @@ public:
     {
         //linear Hash function
 
-        return (((int)(key * tableSize) + i) % tableSize); //we have applied our own choice of h' function - h'(k) = floor(k*tablesize)
+        return (((int)(h1(key)*h2(key)) + i) % tableSize); //we have applied our own choice of h' function - h'(k) = floor(k*tablesize)
     }
 
     //function insert which inserts an entry into the table
@@ -157,8 +157,9 @@ public:
             }
             else if (item[hashValue].key == key) {
                 item[hashValue].flag = deleted;
-                item[hashValue].key = NULL;
-                item[hashValue].data = NULL;
+                //item[hashValue] = nullptr;
+                //item[hashValue].key = nullptr; //issue is assigmnet operator
+                //item[hashValue].data = nullptr;
                 capacity--;
             }
             else {

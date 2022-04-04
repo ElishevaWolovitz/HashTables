@@ -20,7 +20,7 @@ class Repository {
     HashVolunteer hashVolunteer;
 
     //Initializing both hash tables to size 100,
-    Repository(){
+public: Repository(){
         hashClient = HashClient(100);
         hashVolunteer = HashVolunteer(100);
     }

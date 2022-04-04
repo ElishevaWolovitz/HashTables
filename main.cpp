@@ -29,7 +29,7 @@ int main()
     volunteer v;
     client c;
     list<volunteer*> lst;
-    HashTbls ht;
+    Repository ht;
 
     cout << "Hash Tables\n";
     do
