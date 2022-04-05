@@ -5,7 +5,9 @@
 #include <string>
 #include "HashTbls.h"
 #include "hashint.h"
+#include <list>
 #include "client.h"
+#include "volunteer.h"
 #include "Repository.h"
 using namespace std;
 
