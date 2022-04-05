@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <list>
 #include "HashTbls.h"
 #include "hashint.h"
 #include "HashVolunteer.h"
@@ -55,15 +56,15 @@ public: Repository(){
 
     //Given a caller, print the names of the volunteers who responded to him
     void listOfVolunteers(client cli){
-        for( list<volunteer>::iterator iter= cli.responded.begin(); iter != cli.responded.end(); iter++ )
-            cout<<iter->name<< ", ";
+       for(auto & iter : cli.responded)
+           cout<<iter.name<< ", ";
     }
 
     //Given a volunteer, print the names of the callers to which he responded
     void listOfClients(volunteer vol) {
         // iterate through teh list of client names
-        for (list<string>::iterator iter = vol.respondedTo.begin(); iter != vol.respondedTo.end(); iter++)
-            cout << *iter << ", ";
+        for (auto & iter : vol.respondedTo)
+            cout << iter << ", ";
     }
 
     //Printing the callers' table and the volunteers' table
@@ -78,10 +79,11 @@ public: Repository(){
                 cout << hashClient.item[i].data;
             }
         }
-    };
+    }
 
 
 };
 
 #endif //Q2_REPOSITORY_H
+
 

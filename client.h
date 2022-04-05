@@ -37,7 +37,7 @@ public:
 
     //adds a volunteer to the list of responded
     void Responded(volunteer vol) {
-        responded.push_back(vol);
+       responded.push_back(vol);
 
         //make sure there are no duplicates
         responded.unique();
@@ -55,7 +55,7 @@ public:
     }
 
     //assignment operator
-    void operator = (const client& client1){
+   void operator = (const client& client1){
         name = client1.name;
         address = client1.address;
         phoneNumber = client1.phoneNumber;
@@ -74,14 +74,16 @@ public:
         client1.name = name;
         client1.address = address;
         client1.Responded(vol);
+
+        return is;
     }
 
 
     //output operator
     friend ostream& operator <<(ostream& os, client client1){
         os<<client1.phoneNumber<<", "<<client1.address<<", "<<client1.phoneNumber<<endl;
-        for (std::list<volunteer>::iterator it=responded.begin(); it != responded.end(); ++it) {
-                cout << *it << ", " << endl;
+        for (auto & it : responded) {
+                os << it << ", " << endl;  //might need to change back to cout
         }
         return os;
     }

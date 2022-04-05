@@ -3,13 +3,13 @@
 //
 //Done by Elisheva Wolovitz and Gabriella Bondi
 
-
 #pragma once
 #include <iostream>
 #include <string>
 #include "HashTbls.h"
 #include "volunteer.h"
 #include "client.h"
+#include <list>
 #pragma warning (disable:4996)
 using namespace std;
 
@@ -23,26 +23,16 @@ public:
 
     int h1(string key)
     {
-        for (int i = 0; i < tableSize;)
-        {
-            if (item[i].key != key)
-                i++;
-            else
-                return i;
-        }
-        return -1;
+        //fins the ascii value of the first letter of you string then treats it like an int (like in client)
+        char firstLetter = key[0];
+        return (((int)firstLetter)%tableSize);
     }
+
     int h2(string key)
     {
-        int x = hash(key, 0);
-        int y = h1(key);
-        int z = hash(key, y);
-        if (y == -1)
-            return -1;
-        if (y >= x)
-            return (y - x) ;
-        else
-            return (y + ((tableSize-1) - x));
+        char firstLetter = key[0];
+        //function we chose for double hashing
+        return (1+(((int)firstLetter)%tableSize));
     }
 };
 

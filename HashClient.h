@@ -9,6 +9,7 @@
 #include "HashTbls.h"
 #include "volunteer.h"
 #include "client.h"
+#include <list>
 #pragma warning (disable:4996)
 using namespace std;
 
@@ -22,26 +23,12 @@ public:
 
     int h1(int key)
     {
-        for (int i = 0; i < capacity;)
-        {
-            if (item[i].key != key)
-                i++;
-            else
-                return i;
-        }
-        return -1;
+       return (key%tableSize);
     }
+
     int h2(int key)
     {
-        int x = hash(key, 0);
-        int y = h1(key);
-        int z = hash(key, y);
-        if (y == -1)
-            return -1;
-        if (y >= x)
-            return (y - x);
-        else
-            return (y + ((tableSize - 1) - x));
+       return (1+(key%tableSize));
     }
 };
 

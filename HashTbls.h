@@ -6,6 +6,7 @@
 #pragma once
 #include <iostream>
 #include <cmath>
+#include <list>
 #pragma warning (disable:4996)
 using namespace std;
 
@@ -80,9 +81,9 @@ public:
     //hash function
     double hash(K key, int i)
     {
-        //linear Hash function
+        //double Hash function
 
-        return (((int)(h1(key)*h2(key)) + i) % tableSize); //we have applied our own choice of h' function - h'(k) = floor(k*tablesize)
+        return ((int)(h1(key)+(i*h2(key))) % tableSize); //we have applied our own choice of h' function - h'(k) = floor(k*tablesize)
     }
 
     //function insert which inserts an entry into the table
@@ -157,9 +158,6 @@ public:
             }
             else if (item[hashValue].key == key) {
                 item[hashValue].flag = deleted;
-                //item[hashValue] = nullptr;
-                //item[hashValue].key = nullptr; //issue is assigmnet operator
-                //item[hashValue].data = nullptr;
                 capacity--;
             }
             else {

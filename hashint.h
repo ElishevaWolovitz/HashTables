@@ -7,6 +7,7 @@
 #include <iostream>
 #pragma warning (disable:4996)
 #include "HashTbls.h"
+#include <list>
 
 
 class hashint : public HashTbls<int,int>{

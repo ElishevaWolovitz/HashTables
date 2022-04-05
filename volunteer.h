@@ -3,12 +3,10 @@
 //
 //Done by Elisheva Wolovitz and Gabriella Bondi
 
-
 #ifndef Q2_VOLUNTEER_H
 #define Q2_VOLUNTEER_H
 #include <string>
 #include <iostream>
-#include "client.h"
 #include <list>
 #include <string>
 using namespace std;
@@ -66,6 +64,8 @@ public:
         vol.phoneNumber = phoneNumber;
         vol.name = name;
         vol.address = address;
+
+        return is;
     }
 
 
@@ -73,7 +73,7 @@ public:
     friend ostream& operator <<(ostream& os, volunteer vol){
         os<<vol.phoneNumber<<", "<<vol.address<<", "<<vol.phoneNumber<<endl;
         return os;
-    };
+    }
 
 };
 
