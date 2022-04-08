@@ -11,6 +11,7 @@
 #include "HashVolunteer.h"
 #include "HashClient.h"
 #include "client.h"
+#pragma warning (disable:4996)
 using namespace std;
 
 #ifndef Q2_REPOSITORY_H

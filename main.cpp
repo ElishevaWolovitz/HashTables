@@ -9,6 +9,7 @@
 #include "client.h"
 #include "volunteer.h"
 #include "Repository.h"
+#pragma warning (disable:4996)
 using namespace std;
 
 int main()
