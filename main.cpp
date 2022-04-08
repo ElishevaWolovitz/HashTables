@@ -9,7 +9,6 @@
 #include "client.h"
 #include "volunteer.h"
 #include "Repository.h"
-#pragma warning (disable:4996)
 using namespace std;
 
 int main()
@@ -30,7 +29,7 @@ int main()
     char ch;
     volunteer v;
     client c;
-    list<volunteer*> lst;
+    //list<volunteer*> lst;
     Repository ht;
 
     cout << "Hash Tables\n";

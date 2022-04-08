@@ -2,7 +2,7 @@
 // Created by Gabi Bondi on 31/03/2022.
 //
 //Done by Elisheva Wolovitz and Gabriella Bondi
-
+#pragma once
 #include <iostream>
 #include <string>
 #include <list>
@@ -14,8 +14,8 @@
 #pragma warning (disable:4996)
 using namespace std;
 
-#ifndef Q2_REPOSITORY_H
-#define Q2_REPOSITORY_H
+//#ifndef Q2_REPOSITORY_H
+//#define Q2_REPOSITORY_H
 
 class Repository {
     HashClient hashClient;
@@ -50,22 +50,31 @@ public: Repository(){
     //Adding a volunteer as a responder to a call (must first verify that the volunteer exists
     //in the repository)
     void addVolunteerToClient(volunteer vol, client cli){
+        //responded checks if volunteer is in there and if not deletes it
         cli.Responded(vol);
+
         // add the name of the client to the list of the volunteer that respondedTo it
-        vol.respondedTo.push_back(cli.name);
+        vol.respondedTo[vol.k] = cli.name;
     }
 
-    //Given a caller, print the names of the volunteers who responded to him
+    //Given a caller, print the names of the volunteers who responded to the client
     void listOfVolunteers(client cli){
-       for(auto & iter : cli.responded)
-           cout<<iter.name<< ", ";
+        for(int j = 0; j< cli.i ; j++){
+            cout << cli.responded[j]<< endl;
+        }
+       //for(auto & iter : cli.responded)
+       //    cout<<iter.name<< ", ";
     }
 
     //Given a volunteer, print the names of the callers to which he responded
     void listOfClients(volunteer vol) {
+        //iterate through the array of client names
+        for(int j = 0; j < vol.k; j++){
+            cout<< vol.respondedTo[j]<< endl;
+        }
         // iterate through teh list of client names
-        for (auto & iter : vol.respondedTo)
-            cout << iter << ", ";
+        //for (auto & iter : vol.respondedTo)
+       //     cout << iter << ", ";
     }
 
     //Printing the callers' table and the volunteers' table
@@ -85,6 +94,6 @@ public: Repository(){
 
 };
 
-#endif //Q2_REPOSITORY_H
+//#endif //Q2_REPOSITORY_H
 
 

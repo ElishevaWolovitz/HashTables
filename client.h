@@ -3,8 +3,9 @@
 //
 //Done by Elisheva Wolovitz and Gabriella Bondi
 
-#ifndef Q2_CLIENT_H
-#define Q2_CLIENT_H
+//#ifndef Q2_CLIENT_H
+//#define Q2_CLIENT_H
+#pragma once
 #include <string>
 #include <iostream>
 #include <list>
@@ -18,14 +19,17 @@ public:
     string name;
     string address;
     int phoneNumber;
-    static list<volunteer> responded;
+    //static list<volunteer> responded;
+    volunteer responded[100] = {};
+    //keep track of where we are in the res[onded array
+    static int i;
 
     //default constructor
     client(){
         name = "";
         address = "";
         phoneNumber = 0;
-        responded.empty();
+        i = 0;
     }
 
 
@@ -38,11 +42,16 @@ public:
 
     //adds a volunteer to the list of responded
     void Responded(volunteer vol) {
-       responded.push_back(vol);
 
         //make sure there are no duplicates
-        responded.unique();
+        for(int j = 0; j<i; j++){
+            if(responded[j] == vol)
+                return;
+        }
 
+       //responded.push_back(vol);
+       responded[i] = vol;
+       i++;
     }
 
     //client destructor
@@ -60,7 +69,10 @@ public:
         name = client1.name;
         address = client1.address;
         phoneNumber = client1.phoneNumber;
-        responded = client1.responded;
+        for(int j = 0; j < i; j++){
+            responded[j] = client1.responded[j];
+        }
+        //responded = client1.responded;
     }
 
     //input operator
@@ -83,15 +95,17 @@ public:
     //output operator
     friend ostream& operator <<(ostream& os, client client1){
         os<<client1.phoneNumber<<", "<<client1.address<<", "<<client1.phoneNumber<<endl;
-        for (auto & it : responded) {
-                os << it << ", " << endl;  //might need to change back to cout
+        //for (auto & it : responded) {
+        //        os << it << ", " << endl;  //might need to change back to cout
+        //}
+        for(int j = 0; j< i; j++){
+            os << client1.responded[j] << endl;
         }
         return os;
     }
 
 
-
 };
 
 
-#endif //Q2_CLIENT_H
+//#endif //Q2_CLIENT_H

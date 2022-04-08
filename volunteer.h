@@ -3,8 +3,9 @@
 //
 //Done by Elisheva Wolovitz and Gabriella Bondi
 
-#ifndef Q2_VOLUNTEER_H
-#define Q2_VOLUNTEER_H
+//#ifndef Q2_VOLUNTEER_H
+//#define Q2_VOLUNTEER_H
+#pragma once
 #include <string>
 #include <iostream>
 #include <list>
@@ -20,7 +21,9 @@ public:
     string address;
     int phoneNumber;
     // a list of client names that the volunteer responded to
-    static list<string> respondedTo;
+    string respondedTo[100];
+    // keeps track of the next free index in respondedTo
+    static int k;
 
 public:
 
@@ -79,4 +82,4 @@ public:
 };
 
 
-#endif //Q2_VOLUNTEER_H
+//#endif //Q2_VOLUNTEER_H
