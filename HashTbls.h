@@ -1,13 +1,12 @@
 //
-// Created by Gabi Bondi on 29/03/2022.
+// Created by Gabi Bondi on 08/04/2022.
 //
-//Done by Elisheva Wolovitz and Gabriella Bondi
 
-#pragma once
+#ifndef Q2_HASHTBLS_H
+#define Q2_HASHTBLS_H
+
 #include <iostream>
 #include <cmath>
-#include <list>
-#pragma warning (disable:4996)
 using namespace std;
 
 enum state {available, full, deleted };
@@ -178,3 +177,6 @@ public:
 
 };
 
+
+
+#endif //Q2_HASHTBLS_H

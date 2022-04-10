@@ -1,16 +1,14 @@
 //
-// Created by Gabi Bondi on 31/03/2022.
+// Created by Gabi Bondi on 08/04/2022.
 //
-//Done by Elisheva Wolovitz and Gabriella Bondi
 
-#pragma once
+#ifndef Q2_HASHVOLUNTEER_H
+#define Q2_HASHVOLUNTEER_H
+
 #include <iostream>
 #include <string>
 #include "HashTbls.h"
 #include "volunteer.h"
-#include "client.h"
-#include <list>
-#pragma warning (disable:4996)
 using namespace std;
 
 class HashVolunteer : public HashTbls<volunteer, string>
@@ -36,3 +34,6 @@ public:
     }
 };
 
+
+
+#endif //Q2_HASHVOLUNTEER_H

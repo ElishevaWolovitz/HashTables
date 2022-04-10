@@ -1,14 +1,13 @@
 //
-// Created by Gabi Bondi on 30/03/2022.
+// Created by Gabi Bondi on 08/04/2022.
 //
-//Done by Elisheva Wolovitz and Gabriella Bondi
 
-#pragma once
+#ifndef Q2_HASHINT_H
+#define Q2_HASHINT_H
+
 #include <iostream>
-#pragma warning (disable:4996)
 #include "HashTbls.h"
-#include <list>
-
+using namespace std;
 
 class hashint : public HashTbls<int,int>{
 
@@ -25,5 +24,4 @@ public:
     int h2(int key){ return floor(key*tableSize);}
 };
 
-
-
+#endif //Q2_HASHINT_H

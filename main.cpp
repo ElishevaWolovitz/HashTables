@@ -1,14 +1,9 @@
-//Done by Elisheva Wolovitz and Gabriella Bondi
-
+//
+// Created by Gabi Bondi on 08/04/2022.
 
 #include <iostream>
-#include <string>
-#include "HashTbls.h"
-#include "hashint.h"
-#include <list>
-#include "client.h"
-#include "volunteer.h"
 #include "Repository.h"
+#include "hashint.h"
 using namespace std;
 
 int main()
@@ -29,8 +24,8 @@ int main()
     char ch;
     volunteer v;
     client c;
-    //list<volunteer*> lst;
     Repository ht;
+
 
     cout << "Hash Tables\n";
     do
@@ -58,3 +53,4 @@ int main()
 
     return 0;
 }
+

@@ -1,18 +1,13 @@
 //
-// Created by Gabi Bondi on 29/03/2022.
+// Created by Gabi Bondi on 08/04/2022.
 //
-//Done by Elisheva Wolovitz and Gabriella Bondi
 
-//#ifndef Q2_VOLUNTEER_H
-//#define Q2_VOLUNTEER_H
-#pragma once
+#ifndef Q2_VOLUNTEER_H
+#define Q2_VOLUNTEER_H
+
 #include <string>
 #include <iostream>
-#include <list>
-#include <string>
-#pragma warning (disable:4996)
 using namespace std;
-
 
 class volunteer {
 
@@ -32,6 +27,7 @@ public:
         name = "";
         address = "";
         phoneNumber = 0;
+        volunteer::k = 0;
     }
 
     //constructor that sets the name, address and phone number of the volunteer
@@ -39,6 +35,7 @@ public:
         this->name = name;
         this->address = address;
         this->phoneNumber = phoneNumber;
+        volunteer::k = 0;
     }
 
     //volunteer destructor
@@ -82,4 +79,4 @@ public:
 };
 
 
-//#endif //Q2_VOLUNTEER_H
+#endif //Q2_VOLUNTEER_H
